@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Montserrat:wght@300&family=Open+Sans:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #379683;
+}
+
+h2 {
+  position: absolute;
+  left: 100;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  height: 10vh;
+}
+
+.navbar li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.navbar_link {
+  list-style: none;
+}
+
+.navbar_link li {
+  color: white;
+  display: inline-block;
+  line-height: 80px;
+  padding: 0px 20px;
+}
+
+.navbar_link li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar_link li a:hover {
+  color: #0088a9;
+}
+
+.task button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.task button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-left: 150px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  .logo {
+    font-size: 15px;
+    padding-left: 0px;
+  }
+  header h2 {
+    font-size: 15px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    background-color: #2c3e50;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 150px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 2;
+  }
+
+  .navbar_link li {
+    background-color: #2c3e50;
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  .navbar_link li a {
+    background-color: #2c3e50;
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background-color: none;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+body {
+  height: 100vh;
+  background: #379683;
+}
+
+.container {
+  color: green;
+  background-color: #379683;
+  width: 40%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 60%;
+  min-width: 420px;
+  top: 85%;
+  left: 50%;
+  padding: 30px 40px;
+}
+
+#newtask {
+  position: relative;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+#newtask .input_task {
+  background-color: white;
+  width: 70%;
+  width: 70%;
+  height: 45px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: black;
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+}
+
+#newtask input:focus {
+  outline: none;
+  border-color: #8052ec;
+}
+
+#newtask button {
+  position: relative;
+  float: right;
+  width: 20%;
+  height: 45px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #8052ec;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+#tasks {
+  color: black;
+  background-color: #e27d60;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  border: 2px solid white;
+}
+
+#tasks .task {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.task span {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: white;
+}
+
+.task {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #d1d3d4;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration-thickness: 3px;
+  text-decoration: line-through;
+}
+
+.task .check {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.timer {
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  left: 50%;
+  top: 35%;
+  position: absolute;
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 24px 32px;
+  background: #379683;
+  background-color: white;
+}
+@media (max-width: 858px) {
+
+.timer button {
+  margin-left: 100px;
+  margin-top: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #8052ec;
+  font-size: 50px;
+  width: 60px;
+}
+
+.timer button span {
+  padding: 5px 1px;
+  width: 35px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 35px;
+  font-weight: bold;
+  background: #8052ec;
+  cursor: pointer;
+}
+
+}
+.timer .timer_mins {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  background-color: white;
+}
+.timer .timer_seconds {
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-right: 10px;
+  font-size: 40px;
+  background-color: white;
+}
+.timer .timer_colon {
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  background-color: white;
+}
+
+.timer button {
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #8052ec;
+  font-size: 50px;
+  width: 60px;
+}
+
+.timer button span {
+  padding: 5px 1px;
+  width: 35px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 35px;
+  font-weight: bold;
+  background: #8052ec;
+  cursor: pointer;
+}
